@@ -40,14 +40,14 @@
     </v-app-bar>
 
     <v-main>
+      <Principal/>
     <router-view></router-view>
-      <HelloWorld/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Principal from './components/Principal';
 import Crudjs from '../src/views/Crudjs';
 import Json from '../src/views/Json';
 import axios from 'axios';
@@ -57,7 +57,7 @@ export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Principal,
     
   },
 

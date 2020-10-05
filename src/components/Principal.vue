@@ -15,7 +15,7 @@
         </v-flex>
 
         <v-flex class="md-4"> 
-          <v-card dark >   
+          <v-card >   
           <v-card-text class="text-justify"> 
               * Herramientas a utilizar:<br/>
 
@@ -73,7 +73,7 @@ La app debe tener su manifest.json (Debe ser Progresiva).<br/><br/>
         <v-flex>
         <v-card color="blue" >
            <router-link to="/Crudjs"><v-btn class="ma-3" >Crud-JS</v-btn></router-link>
-           <router-link to="/Crudjson"><v-btn class="ma-3" >Crud-JSon</v-btn></router-link>
+           <router-link to="/json"><v-btn class="ma-3" >Crud-JSon</v-btn></router-link>
            <router-link to="/"><v-btn class="ma-3" >Home</v-btn></router-link>
        </v-card>
       </v-flex>
@@ -83,7 +83,7 @@ La app debe tener su manifest.json (Debe ser Progresiva).<br/><br/>
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'Principal',
 
     data: () => ({
       
