@@ -4,6 +4,9 @@ export const mutations = {
         console.log(album)
 
     },
+    GET_albums(state, cars) {
+        state.albums = album
+    },
     loadingData(state, loading) {
         state.loading = loading
     }

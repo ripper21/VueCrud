@@ -10,7 +10,7 @@
     <v-layout row wrap>
       <v-flex md6>
 
-        <v-card class="mb-3 blue lighten-5 " v-for="(album, index) in albums" :key="index">
+        <v-card  dark class="mb-3" v-for="(album, index) in albums" :key="index">
           <v-card-text>
             <v-chip label color="blue" text-color="white">
               <v-icon left> mdi-account</v-icon>
@@ -67,6 +67,10 @@
 
 <script>
 import { mapState } from 'vuex';
+import { state } from '../router/index';
+import { mutations } from '../router/index';
+import { actions } from '../router/index';
+
 import store from '../store/index';
 import axios from "axios";
 
@@ -106,8 +110,6 @@ export default {
           },
 
         agregarTarea () {
-            console.log(this.name, this.username , this.email);
-            console.log('updateData', json.slice(1, 10));
             if(this.name === '' || this.username=== ''||this.email=== ''){
                 this.snackbar = true
                 this.mensaje = 'debes llenar los campos vacios'
@@ -127,9 +129,9 @@ export default {
             },
             eliminarTarea(index){
                 //alert(index)
-                alert(this.albums)
-                this.albums = this.albums.slice(e => e.index != index )
-                alert('Elimino album '+index)
+                //alert(this.albums)
+                this.albums = this.albums.splice(e => e.index , 1 != index )
+                //alert('Elimino album '+index)
             },
             editar(index){
               alert(index)
@@ -137,7 +139,7 @@ export default {
                 this.name = this.albums[index].name
                 this.username = this.albums[index].username
                 this.email = this.albums[index].email
-                this.indexalbums = index
+                this.indexalbums = ['']
             },
             editarTarea(){
                 this.indexalbums[this.indexalbum].name = this.name
